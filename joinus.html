@@ -1,77 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
+<meta charset="utf-8"> 
+<title>Join Us</title>
 
 </head>
-<body onload = "init()">
+<body>
+<form name="join" method="post">
+ <h1>INPUT INFORMATION</h1>
+ <table border="1">
+  <tr>
+   <td>ID</td>
+   <td><input type="text" size="30" name="ID"></td>
+   <td><input type="button" value="CHECK" onclick="mysubmit(1)"></td>
+  </tr>
+  <tr>
+   <td>PASSWORD</td>
+   <td><input type="password" size="30" name="PASSWORD"></td>
+  </tr>
+  <tr>
+   <td>NICKNAME</td>
+   <td><input type="text" size="12" maxlength="8" name="NICKNAME"></td>
+  </tr>
+   </table>
+ <input type="button" value="INSERT" onclick="mysubmit(2)"><input type=reset value="REWRITE">
+</form>
 
-
-
-    <form name = "test" onSubmit = "register()" onReset = "reWrite()" on>
-    아이디: <input type = "text" id = "id" size = "20" value = ""><input type = "button" name = "btn3" value = "중복확인" onclick="check_same_id()"><p> 
-    닉네임: <input type = "text" id = "nickname" size = "20" value = ""><input type = "button" name = "btn4" value = "중복확인" onclick="check_same_name()"><p>
-    패스워드: <input type = "password" id = "password" size = "20" value = ""><p>
-    <input type = "submit" name = "btn1" value = "가입하기">
-    <input type = "reset" name = "btn2" value = "다시 작성">
-    </form>
-    <script = "text/javascript">
-
-     function init() {document.test.id.focus()}
-
-     function check_same_id(){
-     	alert("중복 아이디입니다.");
-     	
-     }
-
-     function check_same_name(){
-     	alert("중복 닉네임입니다.");
-     	
-     }
-
-
-    function register(){
-     	var nickname = document.getElementById("nickname").value;
-		var id = document.getElementById("id").value;
-		var password = document.getElementById("password").value;
-	
-
-    document.test.submit();
-
-	if (!id)
-	alert("ID를 입력해주세요.");
-
-	if (!password)
-	alert("password를 입력하세요.");
-
-	if (!nickname)
-	alert("닉네임을 입력하세요.");
-
-			
-	if(id.length!=0&&password.length!=0){
-		if(1<=id.length&&id.length<=15){
-			if(1<=nickname.length&&nickname.length<=30){
-				if(8<=password.length&&password.length<=12)
-	       			alert("회원 가입을 축하합니다.");
-				else
-					alert("8자 이상 12자 이하로 입력해주세요");	
-			}
-		else 
-			alert("닉네임은 1자이상 30자이하로 입력해주세요");	
-		}
-		else
-			alert("아이디는 1자이상 15자이하로 입력해주세요");
-	}
-		
-	
-	
-    }
-
-     function reWrite()
-     {
-        document.test.reset();
-        alert("다시 입력하세요.");
-      }
-    </script>
-  </body>
-</html>
