@@ -3,91 +3,78 @@
 	<meta charset="UTF-8">
    	<link rel="stylesheet" href="assets/css/main.css">
 </head>
-
 <body>
+<div id="wrap">
+	<!--헤더 : 이너 + 메뉴 -->
+	<header class="header">
+		<!--헤더 이너 : 로고, 검색창, 로그인-->
+		<div class="inner">
+			<!--이너 1) 로고-->
+			<div class="logo">
+				<a href="main3.html">
+					<img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/logo.png?raw=true"/>
+				</a>
+			</div>
+			<!--이너2) 로그인-->
+			<div class="topbar">
+				<div class="topbar_utility">
+					<div class="nav"></div>
 
-<header id="header">
+				</div>
 
-	<div class="header-top">
-		<ul>
-			<li >
-					<a>LOGIN</a>
-			</li>
-			<li>	
-					<a>회원가입</a>
-			</li>
+			</div>
 
-		</ul>
+			<!--이너3) 메뉴바-->
+			<div class="gnb" style="overflow: hidden;">
+				<ul >
+					<li class="gnb_list">
+						<a href="review.html">
+							<span>Review</span>
+						</a>
+					</li>
+					<li class="gnb_list">
+						<a href="ranking.html">
+							<span>Ranking</span>
+						</a>
+						
+					</li>
+					<li class="gnb_list">
+						<a href="review.html">
+							<span>로그인</span>
+						</a>
+					</li>
+					<li class="gnb_list">
+						<a href="review.html">
+							<span>회원가입</span>
+						</a>
+					</li>
 
-	</div>
-	<!--#로그인,회원가입-->
-	<div class="header_inner">
-		<div id="logo">
-			<a href="main.html">
-				<img src="images/logo.png">
-			</a>
-        </div>
+				</ul>
+			</div>
+			<!--//메뉴바-->
 
-		<!--.menu_container -->
-		<div>
-		<nav class="menu_container">
-			<ul id="menu" class="menu">
-			
-			<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-85">
-			<a href="review.html">
-				<figure><img src="images/review.png"></figure>
-			</a>
-		    </li>
-		    <li id="menu-item-410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-410">
-			<a href="ranking.html">
-				<figure><img src="images/ranking.png"></figure>
-			</a>
-		    </li>
-			</ul>
-		</nav>
+		
+			<!--이너4) 검색창-->
+			<div class="main_search">
+           		<select name="searchtype"  class="searchType">
+                	<option value="제목">제목</option>
+                	<option value="배우">배우</option>
+                	<option value="장르">장르</option>
+                	<option value="닉네임">닉네임</option>
+            	</select> 
+				<input name="searchterm" class="searchTerm" type="text" size="100%" placeholder="검색어를 입력해주세요">
+				<button type="submit" class="searchButton"><img src="images/search.png"></button>
+			</div>
 		</div>
-	</div>
-	<!--#header_inner-->
-</header>
+		<!--헤더 이너-->	
+
+	</header>
+	<!--//헤더--> 
+
+	<!--내용-->
+	<div id="content" class="main">
 	
-
-<main class="main_container">
-	<div class="main_wrap">
-
-		<div class="main_search ">
-<!-- 검색창 -->
-
-            <select name="searchtype"  class="searchType">
-
-                <option value="제목">제목</option>
-
-                <option value="배우">배우</option>
-
-                <option value="장르">장르</option>
-
-                <option value="닉네임">닉네임</option>
-            </select> 
-
-	<input name="searchterm" class="searchTerm" type="text" size="100%" placeholder="검색어를 입력해주세요">
-	<button type="submit" class="searchButton">
-		       <img src="images/search.png">
-	</button>
-	</div>
-</p>
-
-</div>
-
-
-
-	</div>
-	<!-- .main_wrap -->
-	<div class="main_container_layer"></div>
-</main>
-<!-- .main_container -->
-
-
-
-<section id="main_section">
+	<section id="main_section">
 
 
 	<article>
@@ -106,7 +93,7 @@
    	<p>posted 11-15-2019</p>
 	<figure>
    	<img src="http://image.yes24.com/blogimage/blog/n/x/nxtdong/rsnQEQG6.jpg" height = "600" weight ="400">
-   <figcaption> moive_poster </figcaption>
+   	<figcaption> moive_poster </figcaption>
 	</figure>
 	<p>요즘 보는 미드 존잼</p>
 	<p>#히어로 #플래시 #그랜트_거스틴 #5점</p>
@@ -114,7 +101,7 @@
    	<p align="right">comments(15)</p>
 
 	</article>
-</section>
+	</section>
 
 
 	<aside id="main_aside">
@@ -143,7 +130,7 @@
 	</aside>
 
 
-<section id="main_section">
+	<section id="main_section">
 	
 	<article>
 	<figure>
@@ -162,15 +149,16 @@
 
 	</article>
 
-</section>
+	</section>
 
 
-
-
-	<footer id="main_footer">
-   		Copyright &copy; 2019 / OpenSW platform
-	</footer>
+	</div>
+	<!--//내용-->
+	
+	<!--footer-->
+	<footer class="footer"></footer>
+	<!--//footer-->
+	
 </div>
-
 </body>
 </html>
