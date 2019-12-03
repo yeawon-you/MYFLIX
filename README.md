@@ -3,7 +3,7 @@
  
 
 1. **메인화면 로그인 or회원가입버튼**
- * `login_joinus.html`[📍](https://github.com/yeawon-you/MYFLIX/blob/master/main.html)
+ * [📍`login_joinus.html`](https://github.com/yeawon-you/MYFLIX/blob/master/main.html)
 ***
  2. 📍**회원가입 관련**
 * `JOINUS_FINAL.html` 
