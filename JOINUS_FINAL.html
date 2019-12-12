@@ -60,7 +60,7 @@
                   <option value="닉네임">닉네임</option>
               </select> 
         <input name="searchterm" class="searchTerm" type="text" size="100%" placeholder="검색어를 입력해주세요">
-        <button type="submit" class="searchButton"><img src="images/search.png"></button>
+        <button type="submit" class="searchButton"><img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true"></button>
       </div>
     </div>
     <!--헤더 이너-->  
@@ -111,17 +111,18 @@
 </div>
 
   <script = "text/javascript">
-        function sub(index){
+        function mysubmit(index){
     if(index == 1){
-      document.test1.action="LOGIN_PAGE.php"; //sub(1)은 로그인 기능을 하는 php로 연결
+      document.join.action="idcheck2.php";
     }
     if(index == 2){
-      document.test1.action="JOINUS_FINAL.html"; //sub(2)은 회원가입 기능을 하는 php로 연결
+      document.join.action="memberSave5.php";
     }
-    document.test1.submit();
+    document.join.submit();
     
   }
-  </script
+  </script>
+
 
 
 </body>

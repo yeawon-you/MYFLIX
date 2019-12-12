@@ -3,27 +3,82 @@
 <head>
    <meta charset="utf-8">
    <title>RANKING</title>
-   <link rel="stylesheet" href="MainStyle.css">
+   <link rel="stylesheet" href="assets/css/main.css">
    <style type="text/css">
       #float {float: left; padding-right: 15px;}
    </style>
 </head>
 
 <body>
-   <div id="wrapper">
-      <header id="main_header"><h1><p style = "font-size: 30px; color: #d32f2f" >RANKING</p></h1></header>
-      <!--메뉴창-->
-      <nav id="main_menu">
-         <ul>
-            <li><a href="Main.html">MAIN</a></li>
-            <li><a href="review.html">REVIEW</a></li>
-            <li><a href="ranking.html">RANKING</a></li>
-         </ul>
-      </nav>
-   </div>
+<div id="wrap">
+<!--헤더 : 이너 + 메뉴 -->
+   <header class="header">
+      <!--헤더 이너 : 로고, 검색창, 로그인-->
+      <div class="inner">
+         <!--이너 1) 로고-->
+         <div class="logo">
+            <a href="main.html">
+               <img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/logo.png?raw=true"/>
+            </a>
+         </div>
+         <!--이너2) 로그인-->
+         <div class="topbar">
+            <div class="topbar_utility">
+               <div class="nav"></div>
+
+            </div>
+
+         </div>
+
+         <!--이너3) 메뉴바-->
+         <div class="gnb" style="overflow: hidden;">
+            <ul >
+               <li class="gnb_list">
+                  <a href="review.html">
+                     <span>Review</span>
+                  </a>
+               </li>
+               <li class="gnb_list">
+                  <a href="ranking.html">
+                     <span style="color: red">Ranking</span>
+                  </a>
+                  
+               </li>
+               <li class="gnb_list">
+                  <a href="review.html">
+                     <span>로그인</span>
+                  </a>
+               </li>
+               <li class="gnb_list">
+                  <a href="review.html">
+                     <span>회원가입</span>
+                  </a>
+               </li>
+
+            </ul>
+         </div>
+         <!--//메뉴바-->
+
+      
+         <!--이너4) 검색창-->
+         <div class="main_search">
+               <select name="searchtype"  class="searchType">
+                  <option value="제목">제목</option>
+                  <option value="배우">배우</option>
+                  <option value="장르">장르</option>
+                  <option value="닉네임">닉네임</option>
+               </select> 
+            <input name="searchterm" class="searchTerm" type="text" size="100%" placeholder="검색어를 입력해주세요">
+            <button type="submit" class="searchButton"><img src="images/search.png"></button>
+         </div>
+      </div>
+      <!--헤더 이너-->   
+
+   </header>
+   <!--//헤더--> 
 
    <!--select-->
-   <div id="wrapper">
+   <div id="content" class="main">
       <section id="main_section">
          <p style="text-align: right">
             <select name="select" onchange="alert">
@@ -56,7 +111,7 @@
    </div>
 
    <!--랭킹보여줄곳-->
-   <div id="wrapper">
+   <div id="content" class="main">
       <section id="main_section">
          <article>
             <div style="padding: 10px; padding-bottom: 20px"><p>
@@ -91,5 +146,6 @@
          </article>
       </section>`
    </div>
+</div>
 </body>
 </html>

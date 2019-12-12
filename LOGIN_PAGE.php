@@ -1,3 +1,15 @@
+
+
+
+<?php
+                $connect = mysqli_connect("127.0.0.1","root","1234","LoginTest");                
+
+ 
+                @session_start();
+    
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,18 +33,17 @@
       <!--이너3) 메뉴바-->
       <div class="gnb" style="overflow: hidden;">
         <ul >
-          <li class="gnb_list">
+          <li>
             <a href="review.html">
               <span>Review</span>
             </a>
           </li>
-          <li class="gnb_list">
+          <li>
             <a href="ranking.html">
               <span>Ranking</span>
             </a>
             
           </li>
-
           <li class="gnb_list">
             <form name="test1" method="POST">
               <input type="button" value="로그인" onclick="sub(1)" id="btn1">
@@ -85,7 +96,7 @@
  
     <h3>Password : </h3>
     <input type="password" size="30" name="PASSWORD">
-   <input type="submit" value="가입하기">
+    <input type="submit" value="로그인">
    <input type="reset" value="다시쓰기">
     </form>
   </div>
@@ -101,7 +112,5 @@
   </footer>
   <!--//footer-->
   
-
-
 </body>
 </html>
