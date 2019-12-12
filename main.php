@@ -123,6 +123,15 @@
 
 		$IMAGE = $row2['POSTER'];
 
+		$sql3 = "SELECT * FROM Users WHERE NICKNAME = '$NICKNAME'";
+		$res3 = mysqli_query($connect,$sql3);	
+		$row3 = mysqli_fetch_assoc($res3);
+
+
+		$PROFILE_IMAGE = $row3['PROFILEIMAGE'];
+		
+		
+
 
 ?>
    <div id="feed_section">
@@ -131,7 +140,7 @@
       <!--프로필 (사진, 닉네임)-->
       <div class="feed_profile">
             <div class="profile_img">
-            <img src="https://postfiles.pstatic.net/MjAxOTEyMDNfMTg0/MDAxNTc1MzU5NjYxNTQ1.IpqIALXWKH8zWwLK4HFxmBYEc4GQ5u8BO16rP7EXMQIg.Ev7EcVDXbL_jjJO_NJfY80Vm1EI_pUTUb9J7AennZsAg.PNG.dellintel17/%EA%B7%B8%EB%A6%BC1.png?type=w966"/>
+            <img src="<?php echo $PROFILE_IMAGE; ?>"/>
             </div>
             <div class="profile_name">
              <span style="display: table-cell;"><b><?php echo $NICKNAME;?></b></span>
