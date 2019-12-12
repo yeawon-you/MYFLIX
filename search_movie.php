@@ -19,14 +19,15 @@
 
 
 
-		    $sql = "SELECT * FROM Search WHERE $category LIKE '%$search_term%'";
+		    $sql = "SELECT * FROM Movie WHERE $category = '$search_term'";
    		    $res = mysqli_query($connect,$sql);	
-		    $row=mysqli_fetch_assoc($res); //한번실행 -> 첫번쨰 나온것으로 진행 
-		    $_SESSION['TITLE']=$row['TITLE'];
+		    $row=mysqli_fetch_assoc($res); //한번실행 -> 유사도 100퍼센트
+		    $_SESSION['TITLE']=$row['TITLE']; //유사도 100퍼센트가 메인으로 뜨게하기 위해 
 
 
 
-		    $sql = "SELECT * FROM Search WHERE $category LIKE '%$search_term%'";
+
+		    $sql = "SELECT * FROM Movie WHERE $category = '$search_term'";
    		    $res = mysqli_query($connect,$sql);
 		    $count = mysqli_num_rows($res);//sql까지 재실행 -> 첫번째나온 결과물으로 인식함 
 
@@ -42,46 +43,29 @@
 				
 
 				echo "$TITLE<br>";
-				echo "<img src=$POSTER><br>";
+?>
+				<img src="<?php echo $POSTER; ?>" width="400" height="270"></br>
+
+<?php
+				
 				echo "$ACTOR<br>";
 				echo "$INTRO<br>";
 ?>
 
 				<form name="write" method="post">
 				<input type="button" name="COMMENT" value="COMMENT" onclick="mysub(1)">
-				<input type="button" name="REVIEW" value="REVIEW" onclick="mysub(2)">
 				</form>
 
 
+
 <?php
+			
+
 				echo "<br>";
 				echo "<br>";
-				
-			//연관검색들을 표시하는것->제목이랑 포스터만 
-			while($row=mysqli_fetch_assoc($res)){
+
 ?>
-				<?php echo $search_term; ?>이 포함된 다른영화<br>
-
-<?php				
-				//검색해서 나온 변수 저장 
-				$TITLE=$row['TITLE'];
-				$POSTER=$row['POSTER'];
-
-		
-
-				echo "$TITLE<br>";
-				echo "<img src=$POSTER><br>";
-
-				echo "<br>";
-				
-			}
-
-		    
-
-	           
-?>
-
-	<!--코맨트를 보여주기 / 리뷰를 보여주기 기능 선택-->
+					<!--코맨트를 보여주기 / 리뷰를 보여주기 기능 선택-->
 	<!--코맨트를 보여주기 기능 선택-->
 		SHOW COMMENT<br>
 		<span onclick="checkbox('1')">NO SPOILER </span>
@@ -170,24 +154,66 @@
 
 ?>		
 		</div>
+<?php
 
-
-
-	<!--리뷰를 보여주기 기능 선택 이 밑에 게시판 형식으로 보여주기-->
-		//<span onclick="checkbox('0')">SHOW REVIEW </span>
-		//<input type="checkbox"  name="checkbox" id="checkbox2" value="2" onclick="oneCheckbox(this)"><br><br>
-
-
-
-
-
-<?php				
 		    }
 		else{
 			echo "검색 결과가 없습니다.";
+			echo "<br>";
 		}
 
+		    $sql = "SELECT * FROM Movie WHERE $category LIKE '%$search_term%' AND NOT $category = '$search_term'"; //검색어가 포함된 다른 영화를 가져오되 그 영화는 가져오지 않음 
+   		    $res = mysqli_query($connect,$sql);
 ?>
+		    이러한 영화를 찾고계신가요?<br><br>
+		    <?php echo $search_term; ?>이(가) 포함된 다른영화<br>
+	
+<?php				
+			//연관검색들을 표시하는것->제목이랑 포스터만 
+			while($row=mysqli_fetch_assoc($res)){
+				
+				//검색해서 나온 변수 저장 
+				$TITLE=$row['TITLE'];
+				$POSTER=$row['POSTER'];
+
+				
+				echo "<br>";
+				
+?>
+
+				<form name="search_relate_movie" method="post" action="search_movie3.php">
+				<input type="image" name="FILE" src="<?php echo $POSTER; ?>" width="200" height="135" value="<?php echo $TITLE;?>" onclick="mysub(2)">
+					<div id="title_name" style="display:none">
+						<input type="text" name="SHOW" value="<?php echo $TITLE;?>">
+					</div>
+				</form>
+
+
+
+				
+				
+
+
+<?php
+				echo "$TITLE";
+				echo "<br>";
+				
+			}
+
+		    
+
+	           
+?>
+
+
+
+
+
+	
+
+
+
+
 
 
 
@@ -196,10 +222,12 @@
 	function mysub(index){
 		if(index==1){
 			document.write.action="write_comment.php";
+			document.write.submit();
 		}
-		if(index==2){																	document.write.action="write_review.php";
+		if(index==2){																	
+			document.search_relate_movie.action="search_movie3.php";
+			document.search_relate_movie.submit();
 		}	
-		document.write.submit();
 	}
 
 	function oneCheckbox(a) {
