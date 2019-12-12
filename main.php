@@ -1,9 +1,10 @@
+
 <?php
                 $connect = mysqli_connect("127.0.0.1","root","54321","LoginTest");                
 
  
                 @session_start();
-      ?>
+?>
 
 
 <html>
@@ -79,17 +80,20 @@
 
       
          <!--이너4) 검색창-->
+	
          <div class="main_search">
-                 <select name="searchtype"  class="searchType">
-                   <option value="제목">제목</option>
-                   <option value="배우">배우</option>
-                   <option value="장르">장르</option>
-                   <option value="닉네임">닉네임</option>
-               </select> 
-            <input name="searchterm" class="searchTerm" type="text" size="100%" placeholder="검색어를 입력해주세요">
-            <button type="submit" class="searchButton"><img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true"></button>
-         </div>
-      </div>
+		<form name="searchmovie" action="search_movie.php" method="post">
+           	<select name="category" class="searchType">
+                	<option value="TITLE">제목</option>
+                	<option value="ACTOR">배우</option>
+                	<option value="GENRE">장르</option>
+            	</select> 
+				<input type="text" name="SEARCHTERM" class="searchTerm" size="100%" placeholder="검색어를 입력해주세요">
+				<input type="image" name="SEARCH" src="https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true" onclick="sub(3)" class="searchButton" >
+		</form>
+
+	</div>
+	</div>
       <!--헤더 이너-->   
 
    </header>
@@ -102,6 +106,7 @@
 <!--//여기서부터 피드 코드입니다-->
    
    <?php
+
 
 		$sql = "SELECT * FROM Comment ORDER BY COUNT DESC";
    		$res = mysqli_query($connect,$sql);	
@@ -179,30 +184,25 @@
    
 </div>
 
-  <script = "text/javascript">
+<script = "text/javascript">
     
     function sub(index){
       if(index == 1){
          document.test1.action="LOGIN_PAGE.php"; //sub(1)은 로그인 기능을 하는 php로 연결
+	 document.test1.submit();
       }
       if(index == 2){
          document.test1.action="JOINUS_FINAL.html"; //sub(2)은 회원가입 기능을 하는 php로 연결
+	 document.test1.submit();
       }
-      document.test1.submit();
-      
+      if(index == 3){
+         document.searchmovie.action="search_movie.php";
+	 document.searchmovie.submit();
+      }      
    }
-
-   function mysubmit(index){
-      if(index == 1){
-         document.join.action="idcheck2.php";
-      }
-      if(index == 2){
-         document.join.action="memberSave5.php";
-      }
-      document.join.submit();
-      
-   }
-  </script>
+  
+		
+</script>
 
 
 </body>
