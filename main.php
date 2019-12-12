@@ -102,10 +102,6 @@
 <!--//여기서부터 피드 코드입니다-->
    
    <?php
-                $connect = mysqli_connect("127.0.0.1","root","54321","LoginTest");                
-
- 
-                @session_start();
 
 		$sql = "SELECT * FROM Comment ORDER BY COUNT DESC";
    		$res = mysqli_query($connect,$sql);	
