@@ -17,6 +17,8 @@
                 	<option value="TITLE">TITLE</option>
 
                 	<option value="ACTOR">ACTOR</option>
+
+			<option value="GENRE">GENRE</option>
             	</select> 
 	<input type="text" size="50" name="SEARCHTERM">
 	<input type="button" name="SEARCH" value="Search" onclick="mysub(1)">
