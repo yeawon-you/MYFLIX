@@ -3,6 +3,13 @@
                 $connect = mysqli_connect("127.0.0.1","root","1234","LoginTest");                
 
                 @session_start();
+
+                mysqli_query($connect, "set session character_set_connection=utf8;");
+
+                mysqli_query($connect, "set session character_set_results=utf8;");
+
+                mysqli_query($connect, "set session character_set_client=utf8;");
+
       ?>
 
 
@@ -41,12 +48,11 @@
 
                <li class="gnb_list">
                   <form name="test1" method="POST">
-                     <span id=nickname>
                      <?php
-                     if(isset($_SESSION['ID'])){
-                           echo $_SESSION['NICKNAME'];?>님</span>
+                     if(isset($_SESSION['ID'])){?>
+                           <input type="button" value="MYPAGE" onclick="sub(1)" id="btn1">
                            
-                  <?php   }
+                  <?php   } 
                      
 
                      else { ?>
@@ -97,38 +103,69 @@
    <!--내용-->
    <div id="content" class="main">
    
-   <!--feed-->
-   <div id="feed_section">
-      <!--feed_article-->
-      <div class="feed_article">
+
+<!--//여기서부터 피드 코드입니다-->
+   
+   <?php
+    $sql = "SELECT * FROM Comment ORDER BY COUNT DESC";
+      $res = mysqli_query($connect,$sql); 
+    $row = mysqli_fetch_assoc($res);
+    
+    while($row = mysqli_fetch_assoc($res)){
+    $NICKNAME = $row['WRITER'];
+    $MOVIETITLE = $row['MOVIETITLE'];
+    $CONTENTS = $row['CONTENTS'];
+    $HASHTAG = $row['HASHTAG'];
+    $sql2 = "SELECT * FROM Movie WHERE TITLE = '$MOVIETITLE'";
+    $res2 = mysqli_query($connect,$sql2); 
+    $row2 = mysqli_fetch_assoc($res2);
+    $IMAGE = $row2['POSTER'];
+    $sql3 = "SELECT * FROM Users WHERE NICKNAME = '$NICKNAME'";
+    $res3 = mysqli_query($connect,$sql3); 
+    $row3 = mysqli_fetch_assoc($res3);
+    $PROFILE_IMAGE = $row3['PROFILEIMAGE'];
+    
+    
+?>
+
+
+<div id="feed_section">
+  <div class="feed_article">
       
-         <!--프로필 (사진, 닉네임)-->
-         <div class="feed_profile">
+      <!--프로필 (사진, 닉네임)-->
+      <div class="feed_profile">
             <div class="profile_img">
-            <img src="https://postfiles.pstatic.net/MjAxOTEyMDNfMTg0/MDAxNTc1MzU5NjYxNTQ1.IpqIALXWKH8zWwLK4HFxmBYEc4GQ5u8BO16rP7EXMQIg.Ev7EcVDXbL_jjJO_NJfY80Vm1EI_pUTUb9J7AennZsAg.PNG.dellintel17/%EA%B7%B8%EB%A6%BC1.png?type=w966"/>
+            <img src="<?php echo $PROFILE_IMAGE; ?>"/>
             </div>
             <div class="profile_name">
-             <span style="display: table-cell;"><b>inryuuu</b></span>
+             <span style="display: table-cell;"><b><?php echo $NICKNAME;?></b></span>
              </div>
          </div>
 
          <div class="feed_title">
-               <span> 겨울왕국2</span>
-         </div>
-
-         <div class="feed_img">
-            <img src ="https://movie-phinf.pstatic.net/20191121_221/1574298335357mqgLk_JPEG/movie_image.jpg"/>
-         </div>
-      
-         <div class="feed_comment">
-         <p><b>inryuuu</b> > 우와왕 ㅗ아와왕왕와왕zzzzzzzzzzz왕 </p>
-         </div>
-   
+            <span> <?php echo $MOVIETITLE; ?></span>
       </div>
-      <!--//feed article-->
+
+      <div class="feed_img">
+            <img src ="<?php echo $IMAGE; ?>"/>
+      </div>
+      
+      <div class="feed_comment">
+         <p><b><?php echo $NICKNAME;?></b> <?php echo $CONTENTS; ?></p>
+         <br>
+        <p><?php echo $HASHTAG;?></p>
+      </div>
+</div>
    
-   </div>         
-   <!--/feed-->
+   </div>
+
+
+<?php
+    }
+?>
+
+
+<!--//여기까지 피드 코드입니다-->
 
 
 
@@ -149,7 +186,7 @@
          document.test1.action="LOGIN_PAGE.php"; //sub(1)은 로그인 기능을 하는 php로 연결
       }
       if(index == 2){
-         document.test1.action="JOINUS_FINAL.html"; //sub(2)은 회원가입 기능을 하는 php로 연결
+        document.test1.action="JOINUS_FINAL.php"; //sub(2)은 회원가입 기능을 하는 php로 연결
       }
       document.test1.submit();
       

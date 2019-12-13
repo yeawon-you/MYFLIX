@@ -74,10 +74,10 @@ function register() {
 						<form name="test1" method="POST">
 							<span id=nickname>
 							<?php
-							if(isset($_SESSION['ID'])){
-									echo $_SESSION['NICKNAME'];?>님</span>
-									
-						<?php	}
+                     		if(isset($_SESSION['ID'])){?>
+                           <input type="button" value="MYPAGE" onclick="sub(1)" id="btn1">
+                           
+                  <?php   } 
 							
 
 							else { ?>

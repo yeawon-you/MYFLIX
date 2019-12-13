@@ -24,7 +24,7 @@
     <div class="inner">
       <!--이너 1) 로고-->
       <div class="logo">
-        <a href="main.html">
+        <a href="main.php">
           <img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/logo.png?raw=true"/>
         </a>
       </div>
@@ -45,20 +45,40 @@
             
           </li>
           <li class="gnb_list">
-            <form name="test1" method="POST">
-              <input type="button" value="로그인" onclick="sub(1)" id="btn1">
-            
-  
-          </li>
-          <li class="gnb_list">
-            
-              <input type="button" value="회원가입" onclick="sub(2)" id="btn2">
-            </form>
-          </li>
+                  <form name="test1" method="POST">
+                     <?php
+                     if(isset($_SESSION['ID'])){?>
+                           <input type="button" value="MYPAGE" onclick="sub(1)" id="btn1">
+                           
+                  <?php   } 
+                     
 
-        </ul>
-      </div>
-      <!--//메뉴바-->
+                     else { ?>
+                     <input type="button" value="로그인" onclick="sub(1)" id="btn1">
+                  <?php } ?>
+                     
+   
+               </li>
+
+
+               <li class="gnb_list">
+                  <?php
+
+                  if(isset($_SESSION['ID'])){ ?>
+                     <input type="button" value="로그아웃" onclick='location.replace("./logout_action.php")' id="btn2">
+                  <?php } 
+
+                  else{
+                  ?>         
+                     <input type="button" value="회원가입" onclick="sub(2)" id="btn2">
+                  </form>
+                  <?php }
+                  ?>
+               </li>
+
+            </ul>
+         </div>
+         <!--//메뉴바-->
 
     
       <!--이너4) 검색창-->
@@ -106,11 +126,29 @@
 </div>
 <!--wrap-->
 
-  <!--footer-->
-  <footer class="footer">
-    Copyright &copy; 2019 / OpenSW platform
-  </footer>
-  <!--//footer-->
+
+
+  <script = "text/javascript">
+
+
+      function sub(index){
+      if(index == 1){
+         document.test1.action="LOGIN_PAGE.php"; //sub(1)은 로그인 기능을 하는 php로 연결
+      }
+      if(index == 2){
+        document.test1.action="JOINUS_FINAL.php"; //sub(2)은 회원가입 기능을 하는 php로 연결
+      }
+      document.test1.submit();
+      
+   }
+
+
+
+  </script>
+
+
   
 </body>
+
+
 </html>
