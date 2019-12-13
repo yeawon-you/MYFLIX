@@ -32,7 +32,7 @@ html, body, div, span,li, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, tim
 
 
 body {
-    background: #fff;
+    background-color: : #f7f7f7;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -45,10 +45,9 @@ body {
 }
 
 
-
 body {
     font-size: 15px;
-    background: #f1efeb;
+    background: #f7f7f7;
     margin: 0;
     text align: center;
 }
@@ -57,7 +56,7 @@ body {
     position: fixed;
     z-index: 20;
     width: 100%;
-    height: 85px;
+    height: 80px;
     background: white;
     border-bottom: 1px solid #dadada;
 
@@ -151,7 +150,6 @@ a {
 }
 
 
-
 .gnb {
     z-index: 10;
     position: absolute;
@@ -177,9 +175,19 @@ li {
 
 li a span {display:block;}
 
-/*로그인, 회원가입 버튼*/
 
 
+#nickname{
+  font-size: 10px;
+  float: left;
+
+}
+
+
+
+
+
+/*메뉴바의 로그인, 회원가입 버튼*/
 #btn1 { 
 
   margin-right:-4px; 
@@ -201,7 +209,7 @@ li a span {display:block;}
 
   } 
 
-/*회원가입창 (JOIN_US)*/
+/*로그인, 회원가입창 (JOIN_US, login page)*/
 .login {
   margin:0 auto;
   max-width:500px;
@@ -254,11 +262,12 @@ li a span {display:block;}
 
 
 
+
 #content {
     float: left;
     background: #f7f7f7;
     padding: 50px 100px; 
-    position: relative;
+    position: absolute;
     color: black;
     width: 100%;
     vertical-align: middle;
@@ -266,33 +275,46 @@ li a span {display:block;}
 
 .main{
     background-color: #f7f7f7;
-    position: relative;
-    width: 100%
+    position: absolute;
+    width: 100%;
+    text-align:center;
   
 }
+
+
+/*메인 페이지 피드 */
 
 #feed_section
 {
   float: left; 
-  margin:50px 300px;
-  max-width:600px;
-  padding: 50px 0px;
+  width: 100%;
+/*  max-width:600px;*/
+  padding: 100px 0px;
+  text-align: center;
+    border-radius:20px;
 
 }
 
 
 .feed_article{
   background: white; 
+  border-radius:10px;
   border: 1px solid #dadada; 
   padding: 0px;
   margin bottom: 15px; 
+  display: inline-block;
+
+
 
 }
 
 .feed_profile{
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
   padding: 10px;
   background-color: white;
   border-bottom: 1px solid #dadada;
+  text-align: left;
 
 }
 
@@ -316,26 +338,164 @@ li a span {display:block;}
 
 }
 .feed_img{
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   border-bottom: 1px solid #dadada;
 
 }
 
 .feed_img img{
-  width: 550px;
-  height: 700px; 
+  width: 700px;
+  height: 400px; 
 }
-.feed_cometent{
 
+.feed_comment{
+  text-align: left;
   padding: 10px;
   background-color: white;
 
-
+  border-radius: 10px;
 }
 
 
 
+/*write_comment.php*/
+
+.comment_line{
+  margin:0 auto;
+  max-width:600px;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.comment_form{
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+  text-align:left;
+  color:#8a8a8a;
+}
+
+.comment_title{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+
+}
+
+.comment_option1{
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  text-align: right;
+  float: left;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.comment_option2{
+  padding-top: 15px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  float: left;
+  text-align: left;
+  width: 150px;
+  height: 50px;
+
+}
+
+.comment_option3{
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  text-align: right;
+  float: left;
+  width: 149px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.comment_option4{
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  float: left;
+  text-align: left;
+  width: 149px;
+  height: 50px;
+
+}
+
+.textarea_outline{
+  float: left;
+}
+
+.textarea1{
+  width: 550px;
+  font-family: "Nanum Gothic", sans-serif;
+  margin:1em 2em;
+  margin-top: 2em;
+  border-radius:5px;
+  border:1px solid #dadada;
+  resize: none;
+  padding:10px;
+}
+
+
+.comment_line input[type="text"]
+{
+  width: 550px;
+  line-height:3em;
+  font-family: "Nanum Gothic", sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:1px solid #dadada;
+  outline:none;
+  padding-left:10px;
+}
+
+
+.comment_form input[type="submit"]{
+  height:30px;
+  width:100px;
+  background:#D32F2F;
+  border:1px solid #D32F2F;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor:pointer;
+}
+
+.comment_submit{
+  padding: 20px;
+  text-align: center;
+
+}
+
+
+.checkButton {
+      font-size: 12px;
+      display: inline-block;
+      background-color: white;
+      border : 1px solid #D32F2F;
+      border-radius:20px;
+      color: #D32F2F;
+      padding: 5px 10px 5px 10px;
+   }
+
+.checkButtonOn {
+      font-size: 12px;
+      padding: 5px 10px 5px 10px;
+      display: inline-block;
+      background-color: #D32F2F;
+      border : 1px solid #D32F2F;
+      border-radius:20px;
+      color: white;
+   }
+
+.star { 
+  color: rgba(220, 5, 5); 
+  font-size: 20px;
+}
 
 
 .footer {
@@ -353,8 +513,5 @@ li a span {display:block;}
 
 
 
-#wrapper {
-  width: 960px;
-  margin: 15px auto;
-  text-align: left;
-}
+
+
