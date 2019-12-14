@@ -1,4 +1,4 @@
-{margin : 0px; padding: 0px;}
+ {margin : 0px; padding: 0px;}
 
 header,section, footer, aside,nav, article, figure,
 figcaption , hgroup ,div{ display: block;}
@@ -99,16 +99,21 @@ a {
 .main_search {
     position: absolute;
     top: 22px;
-    left: 250px;
-    width: 500px;
+    left: 215px;
+    width: 800px;
     height: 56px;
     display: flex;
     float: left;
-
 }
 
+.search_form{
+    display: flex;
+    float: left;
+
+
+}
 .searchTerm {
-  width: 500px;
+  width: 650px;
   border: 3px solid #D32F2F;
   border-right: none;
   padding: 5px;
@@ -118,6 +123,7 @@ a {
   color: "black";
   font-family: NanumGothic;
 }
+
 
 .searchType{
   width: 60px;
@@ -142,6 +148,7 @@ a {
   height: 36px;
   border: 1px solid #D32F2F;
   background: #D32F2F;
+  background-image: "https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true"
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -153,9 +160,9 @@ a {
 .gnb {
     z-index: 10;
     position: absolute;
-    left: 870px;
+    left: 1000px;
     top: 22px;
-    width: 300px;
+    width: 400px;
     min-height: 62px;
     display: flex;
     float: left;
@@ -177,11 +184,6 @@ li a span {display:block;}
 
 
 
-#nickname{
-  font-size: 10px;
-  float: left;
-
-}
 
 
 
@@ -195,6 +197,7 @@ li a span {display:block;}
   border : 1px solid #D32F2F;
   border-radius:10px;
   color: #D32F2F;
+  cursor: pointer;
 
 } 
 
@@ -206,6 +209,7 @@ li a span {display:block;}
   border : 1px solid #D32F2F;
   border-radius:10px;
   color: #D32F2F;
+  cursor: pointer;
 
   } 
 
@@ -258,6 +262,7 @@ li a span {display:block;}
   text-transform:uppercase;
   font-family: "Nanum Gothic", sans-serif;
   cursor:pointer;
+  cursor: pointer;
 }
 
 
@@ -378,7 +383,7 @@ li a span {display:block;}
 }
 
 .comment_option1{
-  padding: 10px;
+  padding: 7px 0px 0px 0px;
   border-bottom: 1px solid #dadada;
   text-align: right;
   float: left;
@@ -399,13 +404,17 @@ li a span {display:block;}
 }
 
 .comment_option3{
-  padding: 10px;
+  padding: 7px 0px 0px 0px;
   border-bottom: 1px solid #dadada;
   text-align: right;
   float: left;
   width: 149px;
   height: 50px;
   line-height: 50px;
+}
+
+.comment_option3 img{
+  box-sizing: border-box;
 }
 
 .comment_option4{
@@ -457,6 +466,7 @@ li a span {display:block;}
   text-transform:uppercase;
   font-family: "Nanum Gothic", sans-serif;
   cursor:pointer;
+  cursor: pointer;
 }
 
 .comment_submit{
@@ -471,9 +481,11 @@ li a span {display:block;}
       display: inline-block;
       background-color: white;
       border : 1px solid #D32F2F;
-      border-radius:20px;
+      border-radius:25px;
       color: #D32F2F;
       padding: 5px 10px 5px 10px;
+      cursor: pointer;
+      margin-right: 5px;
    }
 
 .checkButtonOn {
@@ -482,13 +494,16 @@ li a span {display:block;}
       display: inline-block;
       background-color: #D32F2F;
       border : 1px solid #D32F2F;
-      border-radius:20px;
+      border-radius:25px;
       color: white;
+      cursor: pointer;
+      margin-right: 5px;
    }
 
 .star { 
   color: rgba(220, 5, 5); 
   font-size: 20px;
+  cursor: pointer;
 }
 
 
