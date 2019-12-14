@@ -1,8 +1,5 @@
-
 <?php
-                $connect = mysqli_connect("127.0.0.1","root","1234","LoginTest");                
-
-                @session_start();
+   $connect = mysqli_connect("127.0.0.1","root","1234","LoginTest");
 
                 mysqli_query($connect, "set session character_set_connection=utf8;");
 
@@ -10,20 +7,53 @@
 
                 mysqli_query($connect, "set session character_set_client=utf8;");
 
-      ?>
+   @session_start();
+
+?>
 
 
+<!DOCTYPE html>
 <html>
 <head>
-   <meta charset="UTF-8">
-      <link rel="stylesheet" href="assets/css/main.css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="assets/css/main.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+function checkbox(num) {
+   $('#checkbox'+num).click();
+}
+
+function check(wht, num, maxn) {
+   for (var i = 1; i < maxn+1; i++) {
+      $('#bt_'+wht+'_'+i).attr('class', 'checkButton');
+   
+   }
+   $('#bt_'+wht+'_'+num).attr('class', 'checkButtonOn');
+   $('#n'+wht).val(num);
+}
+
+function register() {
+      if ($("input[name=title]").val() == "")
+         alert("제목을 입력하세요");
+      else if ($("#n1").val() == "")
+         alert("스포일러 여부를 선택하세요");
+      else if ($("#n2").val() == "")
+         alert("공개 여부를 선택하세요");
+      else if ($("textarea[name=analysis]").val() == "")
+         alert("분석글 내용을 써주세요");
+      else
+         document.sendForm.submit();
+}
+</script>
+
 </head>
+
 <body>
-<!--wrap-->
 <div id="wrap">
-   <!--헤더 : 이너 + 메뉴 -->
+<!--헤더 : 이너 + 메뉴 -->
    <header class="header">
-    <!--헤더 이너 : 1)로고, 2)검색창, 3)메뉴바,로그인-->
+      <!--헤더 이너 : 로고, 검색창, 로그인-->
       <div class="inner">
          <!--이너 1) 로고-->
          <div class="logo">
@@ -48,34 +78,18 @@
 
                <li class="gnb_list">
                   <form name="test1" method="POST">
-                     <?php
-                     if(isset($_SESSION['ID'])){?>
-                           <input type="button" value="MYPAGE" onclick="sub(1)" id="btn1">
-                           
-                  <?php   } 
-                     
 
-                     else { ?>
-                     <input type="button" value="로그인" onclick="sub(1)" id="btn1">
-                  <?php } ?>
-                     
+                           <input type="button" value="MYPAGE" onclick="sub(1)" id="btn1">
+                      
+                     </form>
    
                </li>
 
 
                <li class="gnb_list">
-                  <?php
-
-                  if(isset($_SESSION['ID'])){ ?>
+                  
                      <input type="button" value="로그아웃" onclick='location.replace("./logout_action.php")' id="btn2">
-                  <?php } 
-
-                  else{
-                  ?>         
-                     <input type="button" value="회원가입" onclick="sub(2)" id="btn2">
-                  </form>
-                  <?php }
-                  ?>
+                
                </li>
 
             </ul>
@@ -83,19 +97,37 @@
          <!--//메뉴바-->
 
       
-         <!--이너2) 검색창-->
+ <!--이너2) 검색창-->
          <div class="main_search">
-                 <select name="searchtype"  class="searchType">
-                   <option value="제목">제목</option>
-                   <option value="배우">배우</option>
-                   <option value="장르">장르</option>
-                   <option value="닉네임">닉네임</option>
-               </select> 
-            <input name="searchterm" class="searchTerm" type="text" size="100%" placeholder="검색어를 입력해주세요">
-            <button type="submit" class="searchButton"><img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true"></button>
+                 <!--선택-->
+                 
+                 <form class="search_form"  name="searchmovie" action="search_movie.php" method="post" >
+                 <select name="category"  class="searchType">
+                   <option value="TITLE">제목</option>
+                   <option value="ACTOR">배우</option>
+                   <option value="GENRE">장르</option>
+                </select> 
+                <!--검색어 쓰는 곳-->
+                <input type="text" name="SEARCHTERM" class="searchTerm" size="100%" placeholder="검색어를 입력해주세요">
+                <!--버튼-->
+
+                <?php
+
+                  if(isset($_SESSION['ID'])){ ?>
+                 <button type="button" class="searchButton" id="search_button" name="SEARCH" onclick="button();"><img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true">
+
+                   <?php } 
+
+                  else{
+                  ?>     
+
+                   <button type="button" class="searchButton" id="search_button" name="SEARCH" onclick="button();" ><img src="https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true"> <?php }?>
+
+
+              </form>
          </div>
       </div>
-      <!--헤더 이너-->   
+      <!--헤더 이너-->      
 
    </header>
    <!--//헤더--> 
@@ -108,8 +140,8 @@
    
    <?php
     $sql = "SELECT * FROM Comment ORDER BY COUNT DESC";
-      $res = mysqli_query($connect,$sql); 
-    $row = mysqli_fetch_assoc($res);
+    $res = mysqli_query($connect,$sql); 
+
     
     while($row = mysqli_fetch_assoc($res)){
     $NICKNAME = $row['WRITER'];
@@ -184,24 +216,39 @@
     function sub(index){
       if(index == 1){
          document.test1.action="LOGIN_PAGE.php"; //sub(1)은 로그인 기능을 하는 php로 연결
+	 document.test1.submit();
       }
       if(index == 2){
-        document.test1.action="JOINUS_FINAL.php"; //sub(2)은 회원가입 기능을 하는 php로 연결
+         document.test1.action="JOINUS_FINAL.html"; //sub(2)은 회원가입 기능을 하는 php로 연결
+	 document.test1.submit();
       }
-      document.test1.submit();
-      
+      if(index == 3){
+	 event.stopImmediatePropagation();
+         document.searchmovie.action="search_movie.php";
+	 document.searchmovie.submit();
+      }
+      if(index == 4){
+	event.stopImmediatePropagation();
+         document.searchmovie2.action="search_movie.php";
+	 document.searchmovie2.submit();
+      }           
+      if(index == 5){
+	 event.stopImmediatePropagation();
+	document.writecomment.action="commentSave.php";
+	 document.writecomment.submit();
+	}
    }
 
-   function mysubmit(index){
-      if(index == 1){
-         document.join.action="idcheck2.php";
-      }
-      if(index == 2){
-         document.join.action="memberSave5.php";
-      }
-      document.join.submit();
-      
+
+   function button(){
+    event.stopImmediatePropagation();
+    document.searchmovie.action='search_movie.php';
+    document.searchmovie.submit();
    }
+
+ 
+
+
   </script>
 
 
