@@ -456,7 +456,8 @@ li a span {display:block;}
 }
 
 
-.comment_form input[type="submit"]{
+.comment_form input[type="submit"],
+.comment_form input[type="button"]{
   height:30px;
   width:100px;
   background:#D32F2F;
@@ -520,8 +521,200 @@ li a span {display:block;}
 }
 
 
-/*search_result*/
+/*search_movie*/
+
+.result_line{
+  margin:0 auto;
+  max-width:600px;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+
+.result_head{
+  padding: 10px;
+}
+
+.result_form{
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+  text-align:left;
+  color:#8a8a8a;
+}
+
+.result_title{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+
+}
+
+.result_actor{
+  font-size: 13.5px;
+  text-align: left;
+  border-bottom: 1px solid #dadada;
+  padding: 15px;
+
+}
+
+.result_intro{
+  font-size: 13.5px;
+  text-align: left;
+  border-bottom: 1px solid #dadada;
+  padding: 15px;
+
+}
+
+.result_poster{
+  font-size: 13.5px;
+  text-align: center;
+  padding: 15px;
+
+}
+
+.result_comment_button{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding-top: 15px;
+  padding-bottom: 30px;
+
+}
+
+.result_comment_button input[type="button"]{
+  height:30px;
+  width:100px;
+  background:#D32F2F;
+  border:1px solid #D32F2F;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor:pointer;
+  cursor: pointer;
+}
+
+.result_comment_head{
+  text-align: left;
+  padding: 10px;
+}
+
+.result_comment_option{
+  height: 40px;
+  padding-left: 35px;
+
+}
+
+/*uncheck*/
+input[type='checkbox']{
+    width: 2rem !important;
+    height: 2rem !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    outline: none;
+    box-shadow: none;
+    background: url("https://github.com/yeawon-you/MYFLIX/blob/master/images/unchecked.png?raw=true")no-repeat;
+    cursor: pointer;
+    position: relative;
+
+}
+
+/*checked*/
+input[type='checkbox']:checked{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    box-shadow: none;
+    background: url("https://github.com/yeawon-you/MYFLIX/blob/master/images/checked.png?raw=true") no-repeat;
+    cursor: pointer;
+
+}
+
+.checkbox_outline{
+  line-height: 15px;
+  float: left;
+
+}
+
+.result_comment_other_out{
+
+  font-size: 13.5px;
+  text-align: center;
+  padding: 15px;
+
+
+}
+
+.result_comment_other_in{
+  display: inline-block;
+  border:1px solid #dadada;
+  width: 570px;
+  background:white;
+  border-radius:10px;
+  text-align:center;
+  color:#8a8a8a;
+  margin: 10px 0px;
+
+
+}
+
+
+.result_comment_other_in_L{
+  padding: 10px;
+  width: 50%;
+  float: left;
+
+}
+
+.result_comment_other_in_R{
+  padding: 10px;
+  width: 15%;
+  float: left;
+  color: #D32F2F;
+  margin: 10px;
+
+}
 
 
 
+.result_comment_text{
+  padding: 10px;
+  width: 100%;
+  float: left;
+  border-top: 1px solid #dadada;
 
+}
+
+.other_movies_out{
+  font-size: 13.5px;
+  text-align: center;
+  padding: 15px;
+  overflow: auto;
+
+
+}
+
+.other_movies_in{
+  display: inline-block;
+  float: left;
+  border:1px solid #dadada;
+  width: 46%;
+  height: 200px;
+  background:white;
+  border-radius:10px;
+  text-align:center;
+  color:#8a8a8a;
+  margin: 10px 10px;
+  padding: 15px;
+
+
+}
+
+.other_title{
+  text-align: center;
+  padding: 10px 10px 0px 0px;
+
+}
