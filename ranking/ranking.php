@@ -45,7 +45,7 @@ if (mysqli_connect_errno()) {
 	exit;
 }
 
-$num = 2814; // 총 데이터 개수
+$num = 2813; // 총 데이터 개수
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1; // 최초 페이지에서 1 값 가지도록
 $list = 10; // 페이지 당 데이터 수
