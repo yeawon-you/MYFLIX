@@ -1,0 +1,1069 @@
+ {margin : 0px; padding: 0px;}
+
+header,section, footer, aside,nav, article, figure,
+figcaption , hgroup ,div{ display: block;}
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
+
+html, body, div, span,li, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, time, figure, article, nav, header, footer, hgroup, video, audio, aside, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Nanum Gothic", sans-serif;
+    color: black;
+    vertical-align: baseline;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  span{
+    font-family: "Nanum Gothic", sans-serif;
+
+  }
+
+  h1,h2,p{
+    font-family: "Nanum Gothic", sans-serif;
+  }
+
+
+  form{
+    width: 100%
+  }
+
+
+body {
+    background-color: : #f7f7f7;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+body {
+    font-size: 15px;
+    background: #f7f7f7;
+    margin: 0;
+    text align: center;
+}
+
+.header {
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    height: 80px;
+    background: white;
+    border-bottom: 1px solid #dadada;
+
+}
+
+.header > .inner {
+    position: relative;
+    width: 1180px;
+    height: 99px;
+    padding-top: 7px;
+    margin: 0 auto;
+}
+
+.logo {
+  position: absolute;
+  top:10px;
+  left: 30px;
+  width: 180px;
+  height: 84px;
+  display: flex;
+  padding: 0px;
+  text-align: center;
+  float: left;
+    
+}
+
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+.main_search {
+    position: absolute;
+    top: 22px;
+    left: 215px;
+    width: 800px;
+    height: 56px;
+    display: flex;
+    float: left;
+}
+
+.search_form{
+    display: flex;
+    float: left;
+
+
+}
+.searchTerm {
+  width: 650px;
+  border: 3px solid #D32F2F;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 0 0 0 0;
+  outline: none;
+  color: "black";
+  font-family: NanumGothic;
+}
+
+
+.searchType{
+  width: 60px;
+  height: 36px;
+  border: 1px solid #D32F2F;
+  background: #D32F2F;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  font-size: 13px;
+
+  }
+
+
+.searchTerm:focus{
+  color: #000000;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #D32F2F;
+  background: #D32F2F;
+  background-image: "https://github.com/yeawon-you/MYFLIX/blob/master/images/search.png?raw=true"
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.gnb {
+    z-index: 10;
+    position: absolute;
+    left: 1000px;
+    top: 22px;
+    width: 400px;
+    min-height: 62px;
+    display: flex;
+    float: left;
+    /* background-color: rgba(250, 250, 250, 0.7); */
+}
+
+li {
+
+  float:left; 
+  list-style:none; 
+  margin:10px;  
+  color: black;
+  font-family: "Nanum Gothic", sans-serif;
+
+
+}
+
+li a span {display:block;}
+
+
+
+
+
+
+
+
+/*메뉴바의 로그인, 회원가입 버튼*/
+#btn1 { 
+
+  margin-right:-4px; 
+  background-color: white;
+  border : 1px solid #D32F2F;
+  border-radius:10px;
+  color: #D32F2F;
+  cursor: pointer;
+
+} 
+
+
+#btn2 { 
+
+  margin-left:-3px; 
+  background-color: white;
+  border : 1px solid #D32F2F;
+  border-radius:10px;
+  color: #D32F2F;
+  cursor: pointer;
+
+  } 
+
+/*로그인, 회원가입창 (JOIN_US, login page)*/
+.login {
+  margin:0 auto;
+  max-width:500px;
+  padding: 130px 0px;
+
+}
+
+.login-form {
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+
+}
+.login-form h3 {
+  text-align:left;
+  margin-left:55px;
+  color:#8a8a8a;
+}
+.login-form {
+  box-sizing:border-box;
+  padding-top:20px;
+  padding-bottom:30px;
+  margin:5% auto;
+  text-align:center;
+}
+.login input[type="text"],
+.login input[type="password"] {
+  max-width:400px;
+  width: 80%;
+  line-height:3em;
+  font-family: "Nanum Gothic", sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:1px solid #dadada;
+  outline:none;
+  padding-left:10px;
+}
+
+.login-form input[type="button"],.login input[type="reset"],.login input[type="submit"]{
+  height:30px;
+  width:100px;
+  background:#D32F2F;
+  border:1px solid #D32F2F;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor:pointer;
+  cursor: pointer;
+}
+
+
+
+
+#content {
+    float: left;
+    background: #f7f7f7;
+    padding: 50px 100px; 
+    position: absolute;
+    color: black;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.main{
+    background-color: #f7f7f7;
+    position: absolute;
+    width: 100%;
+    text-align:center;
+  
+}
+
+
+/*메인 페이지 피드 */
+
+#feed_section
+{
+  float: left; 
+  width: 100%;
+  padding: 45px 0px;
+  text-align: center;
+  border-radius:20px;
+
+}
+
+
+.feed_article{
+  background: white; 
+  border-radius:10px;
+  border: 1px solid #dadada; 
+  padding: 0px;
+  margin bottom: 15px; 
+  display: inline-block;
+  width: 750px;
+
+}
+
+.feed_profile{
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+  text-align: left;
+
+}
+
+.profile_img{
+  display: inline-block;
+  padding-bottom: -10px;
+}
+
+.profile_img img{
+  width:30px;
+  height: 33px;
+  margin-top: 7px;
+  margin-left: 7px;
+
+}
+
+.profile_name{
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+.profile_star{
+  display: inline-block;
+}
+
+
+.feed_title{
+  columns: white;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+  text-align: center;
+
+}
+.feed_img{
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+
+}
+
+.feed_img img{
+  width: 700px;
+  height: 400px; 
+}
+
+.feed_comment{
+  text-align: left;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+/*write_comment.php*/
+.comment_line{
+  margin:0 auto;
+  max-width:750px;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.comment_header{
+
+   padding-top: 30px;
+   padding-bottom: 20px;
+}
+
+.comment_form{
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+  text-align:left;
+  color:#8a8a8a;
+}
+
+
+
+.comment_title{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+
+}
+
+.comment_option1{
+  padding: 7px 0px 0px 0px;
+  border-bottom: 1px solid #dadada;
+  text-align: right;
+  float: left;
+  width: 25%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.comment_option2{
+  padding-top: 15px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  float: left;
+  text-align: left;
+  width: 25%;
+  height: 50px;
+
+}
+
+.comment_option3{
+  padding: 7px 0px 0px 0px;
+  border-bottom: 1px solid #dadada;
+  text-align: right;
+  float: left;
+  width: 25%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.comment_option3 img{
+  box-sizing: border-box;
+}
+
+.comment_option4{
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  float: left;
+  text-align: left;
+  width: 25%;
+  height: 50px;
+
+}
+
+.textarea_outline{
+  display: inline-block;
+  text-align: center;
+  float: left;
+  width: 100%;
+
+}
+
+.textarea1{
+  display: inline-block;
+  width: 670px;
+  font-family: "Nanum Gothic", sans-serif;
+  margin:1em 2em;
+  margin-top: 2em;
+  border-radius:5px;
+  border:1px solid #dadada;
+  resize: none;
+  padding:10px;
+  line-height:20px;
+}
+
+textarea{
+  line-height:20px;
+}
+
+
+.comment_hashtag{
+  display: inline-block;
+  text-align: center;
+  float: left;
+  width: 100%;
+  padding: 10px;
+
+}
+.comment_line input[type="text"]
+{
+  display: inline-block;
+  width: 670px;
+  line-height:3em;
+  font-family: "Nanum Gothic", sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:1px solid #dadada;
+  outline:none;
+  padding-left:10px;
+}
+
+
+.comment_form input[type="submit"],
+.comment_form input[type="button"]{
+  height:30px;
+  width:100px;
+  background:#D32F2F;
+  border:1px solid #D32F2F;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor:pointer;
+  cursor: pointer;
+}
+
+.comment_submit{
+  padding: 20px;
+  text-align: center;
+
+}
+
+
+.checkButton {
+      font-size: 12px;
+      display: inline-block;
+      background-color: white;
+      border : 1px solid #D32F2F;
+      border-radius:25px;
+      color: #D32F2F;
+      padding: 5px 10px 5px 10px;
+      cursor: pointer;
+      margin-right: 5px;
+   }
+
+.checkButtonOn {
+      font-size: 12px;
+      padding: 5px 10px 5px 10px;
+      display: inline-block;
+      background-color: #D32F2F;
+      border : 1px solid #D32F2F;
+      border-radius:25px;
+      color: white;
+      cursor: pointer;
+      margin-right: 5px;
+   }
+
+.star { 
+  color: rgba(220, 5, 5); 
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.footer {
+    float: left;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    border-top: 1px solid #dadada;
+    background-color: white;
+    text-align: center;
+    min-height: 30px;
+    color: #8a8a8a;
+}
+
+
+/*search_movie*/
+
+.result_line{
+  margin:0 auto;
+  padding: 50px 0px;
+  text-align: center;
+  width:750px;
+}
+
+
+.result_head{
+  padding: 10px;
+}
+
+.result_form{
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+  text-align:left;
+  color:#8a8a8a;
+}
+
+.result_title{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+
+}
+
+.result_actor{
+  font-size: 13.5px;
+  text-align: left;
+  border-bottom: 1px solid #dadada;
+  padding: 15px;
+
+}
+
+.result_intro{
+  font-size: 13.5px;
+  text-align: left;
+  border-bottom: 1px solid #dadada;
+  padding: 15px;
+
+}
+
+.result_poster{
+  font-size: 13.5px;
+  text-align: center;
+  padding: 15px;
+
+}
+
+.result_comment_button{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding-top: 15px;
+  padding-bottom: 30px;
+
+}
+
+.result_comment_button input[type="button"]{
+  height:30px;
+  width:100px;
+  background:#D32F2F;
+  border:1px solid #D32F2F;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor:pointer;
+  cursor: pointer;
+}
+
+.result_comment_head{
+  text-align: left;
+  padding: 10px;
+}
+
+.result_comment_option{
+  height: 40px;
+  padding-left: 35px;
+
+}
+
+/*uncheck*/
+input[type='checkbox']{
+    width: 2rem !important;
+    height: 2rem !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    outline: none;
+    box-shadow: none;
+    background: url("https://github.com/yeawon-you/MYFLIX/blob/master/images/unchecked.png?raw=true")no-repeat;
+    cursor: pointer;
+    position: relative;
+
+}
+
+/*checked*/
+input[type='checkbox']:checked{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    box-shadow: none;
+    background: url("https://github.com/yeawon-you/MYFLIX/blob/master/images/checked.png?raw=true") no-repeat;
+    cursor: pointer;
+
+}
+
+.checkbox_outline{
+  line-height: 15px;
+  float: left;
+
+}
+
+.result_comment_other_out{
+  font-size: 13.5px;
+  text-align: center;
+  padding: 15px;
+
+
+}
+
+.result_comment_other_in{
+  display: inline-block;
+  border:1px solid #dadada;
+  width: 700px;
+  background:white;
+  border-radius:10px;
+  text-align:center;
+  color:#8a8a8a;
+  margin: 10px 0px;
+
+
+}
+
+
+.result_comment_other_in_L{
+  padding: 10px;
+  width: 50%;
+  float: left;
+
+}
+
+.result_comment_other_in_R{
+  padding: 10px;
+  width: 50%;
+  float: left;
+  color: #D32F2F;
+
+}
+
+
+
+.result_comment_text{
+  padding: 10px;
+  width: 100%;
+  float: left;
+  border-top: 1px solid #dadada;
+
+}
+
+.other_movies_out{
+  font-size: 13.5px;
+  text-align: center;
+  padding: 15px;
+  overflow: auto;
+
+
+}
+
+.other_movies_in{
+  display: inline-block;
+  float: left;
+  border:1px solid #dadada;
+  width: 47%;
+  height: 225px;
+  background:white;
+  border-radius:10px;
+  text-align:center;
+  color:#8a8a8a;
+  margin: 10px 10px;
+  padding: 15px 15px 0px 15px;
+
+
+}
+
+.other_title{
+  text-align: center;
+  padding: 10px 10px 0px 0px;
+
+}
+
+
+/*write_review*/
+.review_line{
+  margin:0 auto;
+  max-width:750px;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.review_form{
+  display: inline-block;
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+  text-align:left;
+  color:#8a8a8a;
+
+
+}
+
+.review_header{
+   padding-top: 30px;
+   padding-bottom: 20px;
+}
+
+
+
+.movie_title_img{
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+  width: 10%;
+  height: 75px;
+  line-height: 75px;
+  float: left;
+
+}
+
+.movie_title_input{  
+ border-bottom: 1px solid #dadada;
+ padding: 10px;
+ width: 90%;
+ height: 75px;
+ line-height: 75px;
+ float: left;
+ text-align: center;
+ padding-top: 20px;
+
+}
+
+.review_title_img{
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+  width: 10%;
+  height: 75px;
+  line-height: 75px;
+  float: left;
+}
+
+.review_title_input{
+ border-bottom: 1px solid #dadada;
+ padding: 10px;
+ width: 90%;
+ height: 75px;
+ line-height: 75px;
+ float: left;
+ text-align: center;
+ padding-top: 20px;
+
+}
+
+.review_file_img{
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+  width: 10%;
+  height: 75px;
+  line-height: 75px;
+  float: left;
+}
+
+.review_file_input{
+ border-bottom: 1px solid #dadada;
+ padding: 10px;
+ width: 90%;
+ height: 75px;
+ line-height: 75px;
+ float: left;
+ text-align: left;
+ padding-top: 20px;
+ padding-left: 35px;
+
+}
+
+.review_line input[type="flie"]{
+  vertical-align:top;
+}
+
+.review_line input[type="text"]
+{
+  display: inline-block;
+  line-height: 30px;
+  font-family: "Nanum Gothic", sans-serif;
+  border-radius:5px;
+  border:1px solid #dadada;
+  outline:none;
+  padding-left:10px;
+  vertical-align:top;
+}
+
+
+.review_submit{
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+
+  }
+
+.review_form input[type="button"]{
+  height:30px;
+  width:100px;
+  background:#D32F2F;
+  border:1px solid #D32F2F;
+  border-radius:20px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor:pointer;
+  float: left;
+  display:inline-block;
+  margin-left: 300px;
+}
+
+/*mypage*/
+.my_line{
+  margin:0 auto;
+  padding: 50px 0px;
+  text-align: center;
+  width:750px;
+
+}
+
+.my_head{
+  padding: 10px;
+
+}
+
+.my_img{
+position: relative;
+text-align: center;
+z-index: 2;
+
+}
+
+.my_img img{
+
+width: 70px;
+height: 75px;
+
+}
+
+
+.my_form{
+  border:1px solid #dadada;
+  background:white;
+  border-radius:10px;
+  text-align:center;
+  color:#8a8a8a;
+  position: relative;  
+  top: -45px;
+  z-index: 1;
+
+}
+
+.my_title{
+  text-align: center;
+  border-bottom: 1px solid #dadada;
+  padding: 10px;
+  height: 80px;
+  bottom: 0px;
+  padding-top: 40px;
+
+}
+
+.my_work_head{
+  text-align: left;
+  padding: 10px;
+}
+
+.my_feed_article{
+  background: white; 
+  border-radius:10px;
+  border: 1px solid #dadada; 
+  padding: 0px;
+  display: inline-block;
+  width: 700px;
+  margin-bottom: 20px;
+
+}
+
+.my_feed_profile{
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+  text-align: left;
+
+}
+
+.my_profile_img{
+  display: inline-block;
+  padding-bottom: -10px;
+}
+
+.my_profile_img img{
+  width:30px;
+  height: 33px;
+  margin-top: 7px;
+  margin-left: 7px;
+}
+
+.my_profile_name{
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+.my_profile_star{
+  display: inline-block;
+}
+
+
+.my_feed_title{
+  columns: white;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+  text-align: center;
+
+}
+
+
+.my_feed_img{
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+
+}
+
+.my_feed_img img{
+  width: 650px;
+  height: 350px; 
+}
+
+.my_feed_comment{
+  text-align: left;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+table,td{
+   vertical-align: middle;
+   border: 1px solid #dadada;
+}
+
+table{
+  width: 60%
+  margin:auto;
+  text-align: center;
+}
+
+.table_outer{
+  display: inline-block;
+
+}
+
+.list_head{
+  display: inline-block;
+  padding-bottom: 30px;
+
+}
+
+.list_line{
+  margin: 0 auto;
+  padding: 50px 0px;
+  text-align: center;
+  width: 750px;
+
+}
+
+
+.list_search{
+
+ display:inline-block;
+
+}
+
+
+tr, td {
+padding: 15px;
+
+}
+
+.pstyle{
+
+text-align: justify;
+line-height: 200%;
+
+}
